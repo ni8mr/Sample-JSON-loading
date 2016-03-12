@@ -1,6 +1,7 @@
 <html lang="en">
 
 <head>
+  <meta charset="utf-8">
   <title>Test</title>
 </head>
 
@@ -141,13 +142,21 @@
       </div><!-- /.content-wrapper -->
 
       <script type="text/javascript">
-              var $select = $('#select-data')
+            try{
+              console.log('hello');
+              //var $select = $('#select-data')
               $.getJSON('country.json', function(data){
                   for (var i in data){
-                    $select.append('<option>'+ data[name] + '</option>');
+                    console.log(data[name]);
+
+                    //$select.append('<option>'+ data[name] + '</option>');
                   }
               });
+            } catch(e){
+              console.log(e instanceof ReferenceError);
+            }
       </script>
+      <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <body>
 
 </html>
