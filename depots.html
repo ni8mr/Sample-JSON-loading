@@ -142,19 +142,18 @@
 
       <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
       <script type="text/javascript">
-            try{
+              //$.noConflict();
               console.log('hello');
               //var $select = $('#select-data')
-              jquery.getJSON('country.json', function(data){
+              $.getJSON('country.json', function(data){
                   for (var i in data){
                     console.log(data[name]);
-
                     //$select.append('<option>'+ data[name] + '</option>');
                   }
               });
-            } catch(e){
-              console.log(e instanceof ReferenceError);
-            }
+            //catch(e){
+              //console.log(e instanceof ReferenceError);
+            //}
       </script>
 <body>
 
