@@ -55,10 +55,6 @@
                             <label for="" class="col-sm-2 form-control-label">District</label>
                             <div class="col-sm-10">
                               <select class="form-control" id="select-data" placeholder="">
-                                  <option disabled selected>Select the district of the depot here</option>
-                                  <option>Chittagong</option>
-                                  <option>Khulna</option>
-                                  <option>Dhaka</option>
                               </select>
                             </div>
                           </div>
@@ -145,13 +141,12 @@
       </div><!-- /.content-wrapper -->
 
       <script type="text/javascript">
-          $('#select-data').click(function(){
+              var $select = $('#select-data')
               $.getJSON('country.json', function(data){
                   for (var i in data){
-                    console.log(data[name]);
+                    $select.append('<option>'+ data[name] + '</option>');
                   }
-              })
-          });
+              });
       </script>
 <body>
 
