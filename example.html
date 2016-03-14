@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                      <form>
+                          <div class="form-group row">
+                            <label for="" class="col-sm-2 form-control-label">District</label>
+                            <div class="col-sm-10">
+                              <select class="form-control" id="myselect" placeholder="">
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="" class="col-sm-2 form-control-label">Thana</label>
+                            <div class="col-sm-10">
+                              <select class="form-control" id="select-thana" placeholder="">
+                              </select>
+                            </div>
+                          </div>
+                      </form>
+                <div class="box-body">
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+
+      <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+      <script>
+          (function() {
+               var url = "./dummy.json";
+               //var $select = $('#myselect')
+               $.getJSON(url)
+               .done(function( data ) {
+                    // $.each(data.items, function(i, item){
+                    //   $select.append($('<option>').data[name]);
+                    // });
+                    $('#mySelect').empty();
+                    $.each(data, function(key, value) {
+                      if(key == "Districts"){
+                        $('#myselect').append('<option>' + data["Districts"].name + '</option>');
+                        $('#select-thana').append('<option>' + data["Districts"].name + '</option>');
+                      }
+                    });
+                 });
+             })();
+          
+      </script>
+
+</body>
